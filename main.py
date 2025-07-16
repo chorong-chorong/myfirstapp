@@ -13,7 +13,7 @@ mbti_list = [
     "ISTP", "ISFP", "ESTP", "ESFP"
 ]
 
-# MBTI별 한국 배우와 이미지 URL (이미지 출처: 위키미디어 등 공개 자료 위주)
+# MBTI별 한국 배우와 이미지 URL
 mbti_actors = {
     "INTJ": [
         ("설경구", "https://upload.wikimedia.org/wikipedia/commons/d/db/Seol_Gyeong-gu_at_BIFF_2016.jpg"),
@@ -34,8 +34,8 @@ mbti_actors = {
         ("정우성", "https://upload.wikimedia.org/wikipedia/commons/f/f6/Jung_Woo-sung_at_the_2020_Blue_Dragon_Awards.png"),
         ("수지", "https://upload.wikimedia.org/wikipedia/commons/d/d3/Suzy_at_a_fan_meeting_in_2017.png"),
         ("박서준", "https://upload.wikimedia.org/wikipedia/commons/6/6f/Park_Seo-joon_in_2019.jpg")
-    ],
-    # 다른 MBTI도 추가 가능
+    ]
+    # 나머지 MBTI는 필요 시 추가 가능
 }
 
 # 사용자 입력
@@ -46,6 +46,9 @@ if selected_mbti:
     if selected_mbti in mbti_actors:
         for name, img_url in mbti_actors[selected_mbti]:
             st.image(img_url, width=200, caption=name)
+        
+        # 🎈 풍선 효과
+        st.balloons()
     else:
         st.info("해당 MBTI에 대한 배우 추천은 아직 준비 중이에요. 다음 업데이트를 기대해주세요! 🚧")
 
